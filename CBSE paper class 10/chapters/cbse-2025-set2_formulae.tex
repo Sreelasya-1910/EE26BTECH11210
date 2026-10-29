@@ -1,0 +1,135 @@
+\begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
+%---------------- Geometry of circles
+\item Tangent--radius property. If $PA$ is a tangent to a circle with centre $O$ at the point $A$,
+\begin{align}
+	OA \perp PA \label{eq:CBSE25S2-tangent-radius}
+\end{align}
+\item Tangents from an external point. If $PA$ and $PB$ are tangents from $P$ to a circle with centre $O$,
+\begin{align}
+	PA = PB, \quad \triangle OAP \cong \triangle OBP, \quad \angle POA = \angle POB \label{eq:CBSE25S2-tangent-equal}
+\end{align}
+\solution
+$OA = OB$ (radii), $PA = PB$ and $OP$ is common, so the triangles are congruent by SSS. 
+\item Angle sum of a quadrilateral and of a triangle,
+\begin{align}
+	\sum \text{angles} = 360^\circ \text{ (quadrilateral)}, \quad 180^\circ \text{ (triangle)} \label{eq:CBSE25S2-angle-sum}
+\end{align}
+\item Angle in a semicircle. If $AB$ is a diameter and $C$ lies on the circle,
+\begin{align}
+	\angle ACB = 90^\circ \label{eq:CBSE25S2-semicircle}
+\end{align}
+\item Tangent--chord theorem. The angle between a tangent and a chord through the point of contact equals the angle in the alternate segment. If $PC$ is tangent at $C$,
+\begin{align}
+	\angle PCB = \angle CAB \label{eq:CBSE25S2-tangent-chord}
+\end{align}
+\item Sector of a circle. For radius $r$, central angle $\theta$ (in radians) and arc length $L$,
+\begin{align}
+	L = r\theta, \quad A = \frac{1}{2}r^2\theta = \frac{1}{2}rL \label{eq:CBSE25S2-sector}
+\end{align}
+\solution
+The area is the polar integral
+\begin{align}
+	A = \int_0^{\theta}\int_0^{r}\rho\,d\rho\,d\phi = \frac{r^2\theta}{2}
+\end{align}
+and $L = r\theta$, so $A = \frac{1}{2}rL$. 
+%---------------- Similarity
+\item AA similarity. If two angles of one triangle equal two angles of another, the triangles are similar and corresponding sides are in the same ratio. For $\triangle LMN \sim \triangle ABC$,
+\begin{align}
+	\frac{LM}{AB} = \frac{MN}{BC} = \frac{LN}{AC} \label{eq:CBSE25S2-similar}
+\end{align}
+%---------------- Mensuration
+\item Cube of side $a$,
+\begin{align}
+	V = a^3, \quad S = 6a^2 \implies \frac{S_1}{S_2} = \brak{\frac{V_1}{V_2}}^{2/3} \label{eq:CBSE25S2-cube}
+\end{align}
+\solution
+$\frac{a}{b} = \brak{\frac{V_1}{V_2}}^{1/3}$ and $\frac{S_1}{S_2} = \brak{\frac{a}{b}}^2$. Used in Q.3.
+\item Cone and sphere. For a cone of radius $R$ and height $h$, and a sphere of radius $r$,
+\begin{align}
+	V_{\text{cone}} = \frac{1}{3}\pi R^2 h, \quad V_{\text{sphere}} = \frac{4}{3}\pi r^3 \label{eq:CBSE25S2-solids}
+\end{align}
+Volume of solids dropped into a full vessel equals the volume of water displaced. Used in Q.33.
+%---------------- Coordinate geometry and vectors
+\item Section formula. The point $\vec{R}$ dividing $\vec{P}$ and $\vec{Q}$ internally in the ratio $m:n$,
+\begin{align}
+	\vec{R} = \frac{m\vec{Q} + n\vec{P}}{m+n} = \vec{P} + \frac{m}{m+n}\brak{\vec{Q}-\vec{P}} \label{eq:CBSE25S2-section}
+\end{align}
+For $m = n$ this is the mid-point $\frac{\vec{P}+\vec{Q}}{2}$. Used in Q.4, Q.15, Q.31(b).
+\item Squared length and perpendicularity,
+\begin{align}
+	\norm{\vec{A}}^2 = \vec{A}^{\top}\vec{A}, \quad \vec{A} \perp \vec{B} \iff \vec{A}^{\top}\vec{B} = 0 \label{eq:CBSE25S2-dot}
+\end{align}
+Used in Q.8, Q.11.
+\item Altitude to the hypotenuse. If $\angle BAC = 90^\circ$ and $AD \perp BC$, then
+\begin{align}
+	AD^2 = BD \cdot DC \label{eq:CBSE25S2-altitude}
+\end{align}
+\solution
+Take $\vec{B} = \myvec{0\\0}$, $\vec{D} = \myvec{BD\\0}$, $\vec{C} = \myvec{BD+DC\\0}$, $\vec{A} = \myvec{BD\\h}$. From \eqref{eq:CBSE25S2-dot},
+\begin{align}
+	\brak{\vec{B}-\vec{A}}^{\top}\brak{\vec{C}-\vec{A}} = -BD\cdot DC + h^2 = 0
+\end{align}
+Used in Q.11.
+%---------------- Number theory
+\item Euclidean algorithm and LCM,
+\begin{align}
+	\gcd\brak{a,b} = \gcd\brak{b, a \bmod b}, \quad \text{lcm}\brak{a,b} = \frac{ab}{\gcd\brak{a,b}} \label{eq:CBSE25S2-euclid}
+\end{align}
+The LCM of three numbers is $\text{lcm}\brak{\text{lcm}\brak{a,b},c}$. Used in Q.9, Q.23.
+\item Numbers in a given ratio. If two numbers are in the ratio $p:q$ with $\gcd\brak{p,q} = 1$ and HCF $k$,
+\begin{align}
+	\text{numbers} = pk,\ qk, \quad \text{lcm} = pqk \label{eq:CBSE25S2-ratio-hcf}
+\end{align}
+Used in Q.23(b).
+%---------------- Algebra
+\item Zeroes of a quadratic. For $ax^2 + bx + c$ with zeroes $\alpha, \beta$,
+\begin{align}
+	\alpha + \beta = -\frac{b}{a}, \quad \alpha\beta = \frac{c}{a} \label{eq:CBSE25S2-zeroes}
+\end{align}
+Used in Q.6, Q.21(b).
+\item Newton--Raphson method. To solve $f\brak{x} = 0$,
+\begin{align}
+	x_{n+1} = x_n - \frac{f\brak{x_n}}{f^{\prime}\brak{x_n}} \label{eq:CBSE25S2-newton}
+\end{align}
+\solution
+The tangent to $f$ at $x_n$ is $y = f\brak{x_n} + f^{\prime}\brak{x_n}\brak{x - x_n}$. Setting $y = 0$ gives $x_{n+1}$. Used in Q.6, Q.21(b).
+\item Arithmetic progression with first term $a$ and common difference $d$,
+\begin{align}
+	a_n = a + \brak{n-1}d, \quad S_n = \frac{n}{2}\sbrak{2a + \brak{n-1}d} = \frac{n}{2}\brak{a + a_n} \label{eq:CBSE25S2-ap}
+\end{align}
+Used in Q.32(a).
+\item Two linear equations (Cramer's rule). For $\myvec{a & b \\ c & d}\myvec{x \\ y} = \myvec{e \\ f}$ with $\Delta = ad - bc \neq 0$,
+\begin{align}
+	x = \frac{ed - bf}{\Delta}, \quad y = \frac{af - ec}{\Delta} \label{eq:CBSE25S2-cramer}
+\end{align}
+Used in Q.34.
+\item Simple interest on a principal $P$ at rate $r\%$ per annum for $t$ years,
+\begin{align}
+	I = \frac{Prt}{100} \label{eq:CBSE25S2-interest}
+\end{align}
+Used in Q.34.
+%---------------- Trigonometry
+\item Standard values and inverse sine,
+\begin{align}
+	\sin 60^\circ = \frac{\sqrt{3}}{2}, \quad \tan 30^\circ = \frac{1}{\sqrt{3}}, \quad \tan 45^\circ = 1 \label{eq:CBSE25S2-trig}
+\end{align}
+The principal value $\sin^{-1}\brak{\frac{\sqrt{3}}{2}} = 60^\circ$. Used in Q.5, Q.38.
+\item Angle of depression. From a point at height $h$, a point on the ground at horizontal distance $d$ is seen at an angle of depression $\alpha$ with
+\begin{align}
+	\tan\alpha = \frac{h}{d} \label{eq:CBSE25S2-depression}
+\end{align}
+since the angle of depression equals the angle of elevation from the ground. Used in Q.38.
+%---------------- Probability and statistics
+\item Probability with an indicator map. For a finite sample space $S$ with outcome probabilities $p_s$ and an event $E$ with indicator $m\brak{s} \in \cbrak{0,1}$,
+\begin{align}
+	\pr{E} = \sum_{s \in S} m\brak{s}\,p_s = \vec{m}^{\top}\vec{p} \label{eq:CBSE25S2-prob}
+\end{align}
+For equally likely outcomes, $p_s = \frac{1}{\abs{S}}$. Also $\pr{E} + \pr{E^{\prime}} = 1$. Used in Q.10, Q.27.
+\item Grouped data. For a class with lower limit $l$, width $h$, frequency $f$, preceding cumulative frequency $cf$, and class mark $x_i$,
+\begin{align}
+	\bar{x} &= \frac{\sum f_i x_i}{\sum f_i} \label{eq:CBSE25S2-mean}
+	\\
+	\text{Median} &= l + \frac{\frac{N}{2} - cf}{f}\times h, \quad N = \sum f_i \label{eq:CBSE25S2-median}
+\end{align}
+The modal class is the class with the highest frequency. 
+\end{enumerate}

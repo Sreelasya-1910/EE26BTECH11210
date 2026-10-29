@@ -1,0 +1,17 @@
+\begin{tikzpicture}[scale=0.55, >=Stealth]
+    \coordinate (B) at (0,0);
+    \coordinate (C) at (16,0);
+    \coordinate (D) at (12,0);
+    \coordinate (A) at (12,6.9282);
+    \draw[thick] (B) -- (C) -- (A) -- cycle;
+    \draw[thick] (A) -- (D);
+    \draw (D)++(-0.6,0) -- ++(0,0.6) -- ++(0.6,0);
+    \fill (A) circle (2pt) (B) circle (2pt) (C) circle (2pt) (D) circle (2pt);
+    \node[below left] at (B) {$B$};
+    \node[below right] at (C) {$C$};
+    \node[below] at (D) {$D$};
+    \node[above] at (A) {$A$};
+    \node[below] at (8,-0.9) {\small $BC = 16$ cm};
+    \node[below right] at (14,0) {\small $4$ cm};
+    \node[right] at (14.2,3.6) {\small $x$};
+\end{tikzpicture}

@@ -1,0 +1,114 @@
+\begin{enumerate}[label=\thesubsection.\arabic*, ref=\thesubsection.\theenumi]
+%---------------- Functions and matrices
+\item Domain of inverse functions. $\cos^{-1}x$ and $\sin^{-1}x$ are defined only for $-1 \le x \le 1$, while $\sin x$ and $\cos x$ are defined for all real $x$. The domain of a sum is the intersection of the domains. 
+\item Counting. If each of $m$ independent positions can take $c$ values, the total number of arrangements is
+\begin{align}
+	N = c^m \label{eq:CBSE12-count}
+\end{align}
+\item Symmetric matrix. A square matrix is symmetric if
+\begin{align}
+	\vec{A}^{\top} = \vec{A} \label{eq:CBSE12-symmetric}
+\end{align}
+Every diagonal matrix is symmetric.
+\item Determinant properties. For $n\times n$ matrices $\vec{A}$, $\vec{B}$ and a scalar $k$,
+\begin{align}
+	\abs{k\vec{A}} = k^n\abs{\vec{A}}, \qquad \abs{\vec{A}\vec{B}} = \abs{\vec{A}}\abs{\vec{B}} \label{eq:CBSE12-det}
+\end{align}
+\item Adjugate. With $\vec{A}\,\text{adj}\,\vec{A} = \abs{\vec{A}}\vec{I}$,
+\begin{align}
+	\abs{\text{adj}\,\vec{A}} = \abs{\vec{A}}^{n-1} \label{eq:CBSE12-adj}
+\end{align}
+\solution
+Taking determinants of $\vec{A}\,\text{adj}\,\vec{A} = \abs{\vec{A}}\vec{I}$ gives $\abs{\vec{A}}\abs{\text{adj}\,\vec{A}} = \abs{\vec{A}}^n$. 
+\item Characteristic polynomial and Cayley--Hamilton theorem. For a $2\times2$ matrix,
+\begin{align}
+	\lambda^2 - \text{tr}\brak{\vec{A}}\lambda + \abs{\vec{A}} = 0, \qquad \vec{A}^2 - \text{tr}\brak{\vec{A}}\vec{A} + \abs{\vec{A}}\vec{I} = \vec{0} \label{eq:CBSE12-ch}
+\end{align}
+The eigenvalues sum to the trace and multiply to the determinant. 
+\item Cramer's rule. For $\myvec{a & b \\ c & d}\myvec{x \\ y} = \myvec{e \\ f}$ with $\Delta = ad - bc \neq 0$,
+\begin{align}
+	x = \frac{ed - bf}{\Delta}, \quad y = \frac{af - ec}{\Delta} \label{eq:CBSE12-cramer}
+\end{align}
+
+%---------------- Calculus
+\item Monotonicity. If $f^{\prime}\brak{x} > 0$ for all $x$ in an interval, $f$ is strictly increasing there; if $f^{\prime}\brak{x} < 0$, it is strictly decreasing. 
+\item Logarithm and exponential. For $x > 0$,
+\begin{align}
+	e^{k\log x} = x^k \label{eq:CBSE12-explog}
+\end{align}
+\item Integral properties.
+\begin{align}
+	\int_a^b f\brak{x}\,dx = \int_a^b f\brak{a+b-x}\,dx, \qquad
+	\int_{-a}^{a} f\brak{x}\,dx = \begin{cases} 2\int_0^a f\brak{x}\,dx & f \text{ even} \\ 0 & f \text{ odd} \end{cases} \label{eq:CBSE12-intprop}
+\end{align}
+\begin{align}
+	\int_0^{2a} f\brak{x}\,dx = \int_0^{a} f\brak{x}\,dx + \int_0^{a} f\brak{a+x}\,dx \label{eq:CBSE12-split}
+\end{align}
+\item Midpoint Riemann sum. With $n$ subintervals of width $\Delta x = \frac{b-a}{n}$ and midpoints $x_i^* = a + \brak{i - \frac{1}{2}}\Delta x$,
+\begin{align}
+	\int_a^b f\brak{x}\,dx \approx \sum_{i=1}^{n} f\brak{x_i^*}\Delta x \label{eq:CBSE12-riemann}
+\end{align}
+The sum converges to the integral as $n \to \infty$. 
+\item Standard integrals,
+\begin{align}
+	\int \frac{du}{\sqrt{1-u^2}} = \sin^{-1}u + C, \qquad
+	\int \frac{dx}{x^2+a^2} = \frac{1}{a}\tan^{-1}\frac{x}{a} + C \label{eq:CBSE12-standard}
+\end{align}
+
+\item Derivatives. Product rule, chain rule and the exponential rule,
+\begin{align}
+	\frac{d}{dx}\brak{uv} = u^{\prime}v + uv^{\prime}, \quad
+	\frac{d}{dx}a^x = a^x\ln a, \quad
+	\frac{d}{dx}\log\brak{\sin u} = \cot u\,\frac{du}{dx} \label{eq:CBSE12-deriv}
+\end{align}
+
+\item Symmetric integral. If $g\brak{\pi - x} = g\brak{x}$,
+\begin{align}
+	\int_0^\pi x\,g\brak{x}\,dx = \frac{\pi}{2}\int_0^\pi g\brak{x}\,dx \label{eq:CBSE12-king}
+\end{align}
+\solution
+Substituting $x \to \pi - x$ gives $I = \int_0^\pi\brak{\pi - x}g\brak{x}\,dx$. Adding this to the original, $2I = \pi\int_0^\pi g\brak{x}\,dx$.
+\item Laplace transform. For a first-order equation $y^{\prime} + ay = f\brak{x}$,
+\begin{align}
+	\mathcal{L}\cbrak{y^{\prime}} = sY\brak{s} - y\brak{0}, \quad \mathcal{L}\cbrak{\cos x} = \frac{s}{s^2+1}, \quad \mathcal{L}\cbrak{e^{-ax}} = \frac{1}{s+a} \label{eq:CBSE12-laplace}
+\end{align}
+\begin{align}
+	\mathcal{L}\cbrak{1} = \frac{1}{s}, \quad \mathcal{L}\cbrak{t} = \frac{1}{s^2} \label{eq:CBSE12-laplace2}
+\end{align}
+The order of a differential equation is the highest derivative present; the degree is its power. 
+%---------------- Vectors and 3D geometry
+\item Orthogonality and scalar product with a unit vector,
+\begin{align}
+	\abs{\vec{a}+\vec{b}} = \abs{\vec{a}-\vec{b}} \iff \vec{a}^{\top}\vec{b} = 0, \qquad
+	\text{scalar product of } \vec{a} \text{ with unit vector along } \vec{v} = \frac{\vec{a}^{\top}\vec{v}}{\norm{\vec{v}}} \label{eq:CBSE12-vec}
+\end{align}
+\item Distance between parallel lines $\vec{x} = \vec{P}_1 + \lambda\vec{d}$ and $\vec{x} = \vec{P}_2 + \mu\vec{d}$,
+\begin{align}
+	d = \frac{\norm{\brak{\vec{P}_2 - \vec{P}_1}\times\vec{d}}}{\norm{\vec{d}}} \label{eq:CBSE12-pardist}
+\end{align}
+
+\item Points on a line in space. A line $\vec{x} = \vec{A} + t\vec{d}$ is written with one parameter $t$, and the distance of a point on it from $\vec{P}$ is $\norm{\vec{A} + t\vec{d} - \vec{P}}$. Used in Q.35(A).
+\item Foot of the perpendicular and image. For a point $\vec{P}$ and the line $\vec{A} + t\vec{d}$,
+\begin{align}
+	t_0 = \frac{\brak{\vec{P}-\vec{A}}^{\top}\vec{d}}{\vec{d}^{\top}\vec{d}}, \quad \vec{H} = \vec{A} + t_0\vec{d}, \quad \vec{P}^{\prime} = 2\vec{H} - \vec{P} \label{eq:CBSE12-image}
+\end{align}
+
+%---------------- Linear programming
+\item Corner point theorem. The maximum or minimum of a linear objective over a feasible region occurs at a corner point. For an unbounded region, a minimum exists only if the objective is bounded below there. 
+%---------------- Probability
+\item Conditional probability,
+\begin{align}
+	\pr{A\mid B} = \frac{\pr{A\cap B}}{\pr{B}}, \qquad \pr{A^{\prime}\cap B} = \pr{B} - \pr{A\cap B} \label{eq:CBSE12-cond}
+\end{align}
+and $\pr{A\cap B} \le \min\cbrak{\pr{A},\pr{B}}$. 
+\item Probability mapping (pmf). For an event with indicator $m\brak{s}\in\cbrak{0,1}$ over outcomes with probabilities $p_s$,
+\begin{align}
+	\pr{E} = \sum_s m\brak{s}p_s, \qquad E\sbrak{X} = \sum_x x\,\pr{X=x} \label{eq:CBSE12-pmf}
+\end{align}
+For independent trials the joint pmf is the product of the individual pmfs. 
+\item Total probability and Bayes' theorem. For mutually exclusive, exhaustive events $A_1, \dots, A_n$,
+\begin{align}
+	\pr{D} = \sum_i \pr{D\mid A_i}\pr{A_i}, \qquad
+	\pr{A_1\mid D} = \frac{\pr{D\mid A_1}\pr{A_1}}{\pr{D}} \label{eq:CBSE12-bayes}
+\end{align}
+\end{enumerate}

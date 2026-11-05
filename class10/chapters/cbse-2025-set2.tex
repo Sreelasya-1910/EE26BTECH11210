@@ -484,24 +484,25 @@ The $n^{\text{th}}$ term of an AP is $4$, its common difference is $2$ and the s
 \hfill (CBSE 2025 Set 2, Q.32(a))
 
 \solution
-Let $u\sbrak{n}$ be the unit step function, $u\sbrak{n} = 1$ for $n \ge 0$ and $0$ otherwise. The AP with first term $a$ and common difference $d$ is the causal sequence
+Let $u\sbrak{n}$ be the unit step function, $u\sbrak{n} = 1$ for $n \ge 0$ and $0$ otherwise. Index the terms from $n = 0$, so that the AP with first term $a$ and common difference $d$ is the causal sequence
 \begin{align}
-	x\sbrak{n} = \brak{a + \brak{n-1}d}\,u\sbrak{n-1}
+	x\sbrak{n} = \brak{a + nd}\,u\sbrak{n}
 \end{align}
-so that $x\sbrak{n} = a_n$ for $n \ge 1$ and $x\sbrak{n} = 0$ for $n \le 0$. Since $u\sbrak{n-k} = 1$ only for $k \le n$, the sum of the first $n$ terms is the convolution of $x$ with the unit step,
+with $x\sbrak{0} = a$ and $x\sbrak{n} = 0$ for $n < 0$. Since $u\sbrak{n-k} = 1$ only for $k \le n$, the running sum is the convolution of $x$ with the unit step,
 \begin{align}
-	S\sbrak{n} = \sum_{k} x\sbrak{k}\,u\sbrak{n-k} = \brak{x * u}\sbrak{n}
-	= \brak{na + \frac{n\brak{n-1}}{2}d}\,u\sbrak{n-1}
-\end{align}
-Here $d = 2$ and $x\sbrak{n} = 4$, so $a + 2\brak{n-1} = 4$ gives $a = 6 - 2n$. For $n \ge 1$,
-\begin{align}
-	S\sbrak{n} = n\brak{6 - 2n} + n\brak{n-1} &= n\brak{5 - n} = -14
+	y\sbrak{n} &= \brak{x * u}\sbrak{n} = \sum_{k} x\sbrak{k}\,u\sbrak{n-k} = x\sbrak{0} + x\sbrak{1} + \cdots + x\sbrak{n}
 	\\
-	\implies n^2 - 5n - 14 &= 0 \implies \brak{n-7}\brak{n+2} = 0
+	&= \brak{n+1}a + \frac{n\brak{n+1}}{2}d
 \end{align}
-The step $u\sbrak{n-1}$ requires $n \ge 1$, so $n = 7$ and $a = 6 - 14 = -8$. Then
+for $n \ge 0$. Let $m$ be the index of the last term, so that the number of terms is $m + 1$. Here $d = 2$, $x\sbrak{m} = 4$ and $y\sbrak{m} = -14$. From $x\sbrak{m} = a + 2m = 4$ we get $a = 4 - 2m$, and
 \begin{align}
-	S\sbrak{20} = 20\brak{-8} + \frac{20 \cdot 19}{2}\brak{2} = -160 + 380 = 220
+	y\sbrak{m} = \brak{m+1}\brak{4 - 2m} + m\brak{m+1} &= \brak{m+1}\brak{4 - m} = -14
+	\\
+	\implies m^2 - 3m - 18 &= 0 \implies \brak{m-6}\brak{m+3} = 0
+\end{align}
+Since $m \ge 0$, $m = 6$, so the number of terms is $m + 1 = 7$ and $a = 4 - 12 = -8$. The sum of the first $20$ terms is $y\sbrak{19}$,
+\begin{align}
+	y\sbrak{19} = 20\brak{-8} + \frac{19 \cdot 20}{2}\brak{2} = -160 + 380 = 220
 \end{align}
 The following code verifies the solution
 \begin{lstlisting}[frame=single, basicstyle=\rmfamily, escapeinside={(*@}{@*)}]

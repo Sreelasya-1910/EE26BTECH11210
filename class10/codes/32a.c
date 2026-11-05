@@ -8,14 +8,14 @@ int u(int n)
     return (n >= 0) ? 1 : 0;
 }
 
-/* AP as a causal sequence: x[k] = (a + (k-1) d) u[k-1] */
-double ap(double a, double d, int k)
+/* AP as a causal sequence starting at n = 0: x[n] = (a + n d) u[n] */
+double ap(double a, double d, int n)
 {
-    return (a + (k - 1) * d) * u(k - 1);
+    return (a + n * d) * u(n);
 }
 
-/* S[n] = sum_k x[k] u[n-k]  (convolution of x with the unit step) */
-double partial_sum(double a, double d, int n)
+/* y[n] = (x * u)[n] = sum_k x[k] u[n-k] = sum of x[0], ..., x[n] */
+double running_sum(double a, double d, int n)
 {
     double s = 0.0;
 
@@ -28,25 +28,25 @@ double partial_sum(double a, double d, int n)
 int main(void)
 {
     double d = 2.0;
-    double nth_term = 4.0;
-    double sum_n = -14.0;
+    double last_term = 4.0;     /* x[m] = 4, the last term           */
+    double sum_m = -14.0;       /* y[m] = -14, sum of x[0], ..., x[m] */
 
-    int n_found = -1;
+    int m_found = -1;
     double a_found = 0.0;
 
-    /* x[n] = 4 gives a = 4 - (n-1)d; search for n with S[n] = -14 */
-    for (int n = 1; n <= 30; n++) {
-        double a = nth_term - (n - 1) * d;
+    /* x[m] = a + m d = 4 gives a = 4 - m d; search for m with y[m] = -14 */
+    for (int m = 0; m <= 30; m++) {
+        double a = last_term - m * d;
 
-        if (partial_sum(a, d, n) == sum_n) {
-            n_found = n;
+        if (running_sum(a, d, m) == sum_m) {
+            m_found = m;
             a_found = a;
         }
     }
 
-    printf("Number of terms n = %d\n", n_found);
-    printf("First term a = %.2f\n", a_found);
-    printf("Sum of first 20 terms = %.2f\n", partial_sum(a_found, d, 20));
+    printf("Last index m = %d, number of terms = %d\n", m_found, m_found + 1);
+    printf("First term a = x[0] = %.2f\n", a_found);
+    printf("Sum of first 20 terms = y[19] = %.2f\n", running_sum(a_found, d, 19));
 
     return 0;
 }

@@ -1,0 +1,21 @@
+\begin{tikzpicture}[scale=1.3, >=Stealth]
+    \coordinate (O) at (0,0);
+    \coordinate (A) at (-2,0);
+    \coordinate (B) at (2,0);
+    \coordinate (C) at (1.5321,1.2856);
+    \coordinate (P) at (2.6108,0);
+    \draw[thick] (O) circle (2);
+    \draw[thick] (A) -- (P);
+    \draw[thick] (P) -- (C);
+    \draw[thick] (A) -- (C) -- (B);
+    \draw[thick] (O) -- (C);
+    \fill (O) circle (1.3pt) (A) circle (1.3pt) (B) circle (1.3pt)
+          (C) circle (1.3pt) (P) circle (1.3pt);
+    \node[below] at (O) {$O$};
+    \node[left] at (A) {$A$};
+    \node[below] at (B) {$B$};
+    \node[above] at (C) {$C$};
+    \node[below right] at (P) {$P$};
+    \draw (C)++(-160:0.4) arc[start angle=-160, end angle=-50, radius=0.4];
+    \node[fill=white, inner sep=0.5pt] at (1.30,0.62) {\scriptsize $110^\circ$};
+\end{tikzpicture}

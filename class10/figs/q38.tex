@@ -1,0 +1,21 @@
+\begin{tikzpicture}[scale=1.2, >=Stealth]
+    \coordinate (A) at (0,0);
+    \coordinate (B) at (0,2.5);
+    \coordinate (Q) at (2.5,0);
+    \coordinate (P) at (4.3301,0);
+    \draw[thick] (-0.6,0) -- (5.0,0);
+    \draw[ultra thick] (A) -- (B);
+    \draw[thick] (B) -- (Q);
+    \draw[thick] (B) -- (P);
+    \draw[dashed] (B) -- (5.0,2.5);
+    \fill (A) circle (1.5pt) (B) circle (1.5pt) (Q) circle (1.5pt) (P) circle (1.5pt);
+    \node[below left] at (A) {$A$};
+    \node[above left] at (B) {$B$};
+    \node[below] at (Q) {$Q$};
+    \node[below] at (P) {$P$};
+    \node[left] at (0,1.25) {\small $50$ m};
+    \draw (B)++(1.0,0) arc[start angle=0, end angle=-45, radius=1.0];
+    \draw (B)++(2.0,0) arc[start angle=0, end angle=-30, radius=2.0];
+    \node[fill=white, inner sep=0.5pt] at (1.62,2.18) {\scriptsize $45^\circ$};
+    \node[fill=white, inner sep=0.5pt] at (2.55,2.18) {\scriptsize $30^\circ$};
+\end{tikzpicture}

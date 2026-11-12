@@ -401,13 +401,6 @@ The feasible region is the intersection of the half-planes given by the constrai
 \end{table}
 Because the region is unbounded, the smallest corner value $134$ is the minimum only if the half-plane $18x + 10y < 134$ has no point in common with the feasible region, which \texttt{cvxpy} confirms below.
 
-\textbf{Step 3: optimise with \texttt{cvxpy}.} Since the problem is convex, \texttt{cvxpy} finds the optimum for us. With the variables \texttt{x}, \texttt{y}, the constraints \texttt{[4*x + y >= 20, 2*x + 3*y >= 30, x >= 0, y >= 0]} and
-\begin{lstlisting}[frame=single, basicstyle=\ttfamily\small]
-objective = cp.Minimize(18*x + 10*y)
-problem = cp.Problem(objective, constraints)
-problem.solve()
-\end{lstlisting}
-the solver returns
 \begin{align}
 	Z_{\min} = 134 \text{ at } \brak{x,y} = \brak{3,8}
 \end{align}
@@ -524,7 +517,7 @@ The following code generates \figref{fig:CBSE12-q32B}.
 \end{figure}
 
 \item
-Solve $\dfrac{dy}{dx} = \cos x - 2y$ using Laplace transforms.
+Solve $\dfrac{dy}{dx} = \cos x - 2y$
 \hfill (12, 2025)
 
 \solution
